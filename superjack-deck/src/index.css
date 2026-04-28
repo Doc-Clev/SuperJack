@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: #f5f1ea;
+  color: #171717;
+  font-family: "Fraunces", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+button {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* ---- Print: each slide on its own landscape page ---- */
+@media print {
+  @page {
+    size: 1280px 720px;
+    margin: 0;
+  }
+  html,
+  body {
+    background: #f5f1ea !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .print-slide {
+    page-break-after: always;
+    break-after: page;
+    width: 1280px;
+    height: 720px;
+    overflow: hidden;
+  }
+}
